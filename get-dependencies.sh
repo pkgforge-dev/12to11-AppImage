@@ -33,10 +33,10 @@ cd ./12to11
 # fix transparency issue with EGL renderer
 # this will break compat with nvidia prop driver unfortunately
 sed -i \
-	-e 's|egl_config_attribs[1] = 32|egl_config_attribs[1] = 24|' \
-	-e 's|egl_config_attribs[9] = 8|egl_config_attribs[9] = 0|'   \
+	-e 's|egl_config_attribs\[1\] = 24|egl_config_attribs\[1\] = 32|' \
+	-e 's|egl_config_attribs\[9\] = 0|egl_config_attribs\[9\] = 8|'   \
 	./egl.c
 xmkmf
-make
+make -j"$(nproc)"
 install -Dm755 12to11 /usr/bin/12to11
 git rev-parse --short HEAD > ~/version
