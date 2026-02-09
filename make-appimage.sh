@@ -17,3 +17,6 @@ quick-sharun /usr/bin/12to11
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
+
+# test the final app
+quick-sharun --test ./dist/*.AppImage
