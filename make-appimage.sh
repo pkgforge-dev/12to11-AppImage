@@ -8,6 +8,7 @@ export OUTPATH=./dist
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
 export ICON=DUMMY
 export DESKTOP=DUMMY
+export MAIN_BIN=12to11
 export DEPLOY_OPENGL=1
 
 # Deploy dependencies
