@@ -3,7 +3,8 @@
 set -eu
 
 ARCH=$(uname -m)
-export ARCH
+VERSION=$(pacman -Q 12to11-git | awk '{print $2; exit}') # example command to get version of application here
+export ARCH VERSION
 export OUTPATH=./dist
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
 export ICON=DUMMY
